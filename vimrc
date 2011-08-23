@@ -5,6 +5,10 @@ call pathogen#infect()
 " Syntax highlighting.
 syntax on
 
+" Colors.
+set background=dark
+colorscheme solarized
+
 " File type detection and indentation.
 filetype plugin indent on
 
