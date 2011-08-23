@@ -1,0 +1,32 @@
+[user]
+    name = Nolan Waite
+    email = nolan@nolanw.ca
+[core]
+    excludesfile = ~/.global_gitignore
+[alias]
+    a = add
+    ap = add -p
+    c = commit
+    cm = commit -m
+    cma = commit -a -m
+    ca = commit --amend
+    # Amend previous commit, reusing commit message.
+    caa = commit -a --amend -C HEAD 
+    d = diff
+    b = branch
+    l = log
+    o = checkout
+    p = push
+    s = status
+    # Pretty one-line log.
+    hist = log --pretty=format:\"%h %ad | %s %d [%an]\" --graph --date=short
+[diff]
+    renames = copies
+    nmemonicprefix = true
+[github]
+    user = nolanw
+[push]
+    default = tracking
+[rerere]
+    enabled = true
+

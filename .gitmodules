@@ -1,0 +1,6 @@
+[submodule "vim/bundle/pathogen"]
+	path = vim/bundle/pathogen
+	url = git://github.com/tpope/vim-pathogen.git
+[submodule "bash/completions/git-flow"]
+	path = bash/completions/git-flow
+	url = git://github.com/bobthecow/git-flow-completion.git
