@@ -6,6 +6,7 @@
 [alias]
     a = add
     ap = add -p
+    b = branch
     c = commit
     cm = commit -m
     cma = commit -a -m
@@ -13,7 +14,7 @@
     # Amend previous commit, reusing commit message.
     caa = commit -a --amend -C HEAD 
     d = diff
-    b = branch
+    f = flow
     l = log
     o = checkout
     p = push
