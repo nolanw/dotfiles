@@ -3,6 +3,3 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
-# git flow
-source ~/.bash/completions/git-flow/git-flow-completion.bash
-
