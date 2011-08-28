@@ -9,5 +9,9 @@ WHITE="\[\033[1;37m\]"
 YELLOW="\[\033[0;33m\]"
 COLOR_NONE="\[\e[0m\]"
 
+# More git info in prompt
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="auto"
 PS1="${LIGHT_RED}\w${GREEN}"'$(__git_ps1 " %s")'"${COLOR_NONE} \$ "
 
