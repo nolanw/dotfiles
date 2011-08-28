@@ -4,11 +4,29 @@ alias ll='ls -alF'
 # mkdir
 alias mkdir='mkdir -p'
 
+# helper for getting completion to work with aliases
+function make-completion-wrapper () {
+    local function_name="$2"
+    local arg_count=$(($#-3))
+    local comp_function_name="$1"
+    shift 2
+    local function="
+function $function_name {
+    ((COMP_CWORD+=$arg_count))
+    COMP_WORDS=( "$@" \${COMP_WORDS[@]:1} )
+    "$comp_function_name"
+    return 0
+}"
+    eval "$function"
+}
+
 # git
 alias g='git '
 complete -o default -o nospace -F _git g
 alias go='git checkout '
-complete -o default -o nospace -F _git_checkout go
+make-completion-wrapper _git _git_checkout_mine git checkout
+complete -o bashdefault -o default -o nospace -F _git_checkout_mine go
 alias gs='git status '
-complete -o default -o nospace -F _git_status gs
+make-completion-wrapper _git _git_status_mine git status
+complete -o bashdefault -o default -o nospace -F _git_status_mine gs
 
