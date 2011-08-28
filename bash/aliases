@@ -21,12 +21,12 @@ function $function_name {
 }
 
 # git
-alias g='git '
+alias g='git'
 complete -o default -o nospace -F _git g
-alias go='git checkout '
+alias go='git checkout'
 make-completion-wrapper _git _git_checkout_mine git checkout
 complete -o bashdefault -o default -o nospace -F _git_checkout_mine go
-alias gs='git status '
+alias gs='git status'
 make-completion-wrapper _git _git_status_mine git status
 complete -o bashdefault -o default -o nospace -F _git_status_mine gs
 
