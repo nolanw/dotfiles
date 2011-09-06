@@ -64,6 +64,7 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
+nnoremap <leader>a :Ack
 
 " Then leave me alone.
 nnoremap <leader><space> :noh<cr>
@@ -90,4 +91,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" HTML handiness.
+source ~/.vim/bundle/sparkup/vim/ftplugin/html/sparkup.vim
 
