@@ -49,6 +49,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set autoindent
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " Normal regex.
 nnoremap / /\v
