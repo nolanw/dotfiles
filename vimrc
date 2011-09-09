@@ -33,9 +33,6 @@ set cursorline
 set ruler
 set relativenumber
 
-" Fake close.
-set hidden
-
 " Nicer completion.
 set wildmenu
 set wildmode=list:longest
