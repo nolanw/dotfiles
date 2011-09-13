@@ -31,7 +31,6 @@ set showmode
 set showcmd
 set cursorline
 set ruler
-set relativenumber
 
 " Nicer completion.
 set wildmenu
