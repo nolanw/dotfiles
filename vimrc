@@ -45,7 +45,9 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set autoindent
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+au BufNewFile,BufReadPost *.coffee setl tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+au BufNewFile,BufReadPost *.js setl tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+au BufNewFile,BufReadPost *.html setl tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 " Normal regex.
 nnoremap / /\v
