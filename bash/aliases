@@ -23,6 +23,9 @@ function $function_name {
 # git
 alias g='git'
 complete -o default -o nospace -F _git g
+alias gb='git branch'
+make-completion-wrapper _git _git_branch_mine git branch
+complete -o bashdefault -o default -o nospace -F _git_branch_mine gb
 alias gd='git diff'
 alias go='git checkout'
 make-completion-wrapper _git _git_checkout_mine git checkout
