@@ -1,9 +1,0 @@
-# Source bash completions for homebrew packages.
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
-
-# rbenv completion.
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
-
