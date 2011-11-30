@@ -1,3 +1,5 @@
+(setq-default indent-tabs-mode nil)
+
 (menu-bar-mode -1)
 
 (defvar user-temporary-file-directory
