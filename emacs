@@ -1,4 +1,13 @@
+(setq inhibit-startup-message t)
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+
 (setq-default indent-tabs-mode nil)
+
+(global-set-key "\C-x\C-m" 'execute-extended-command)
+
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
 
 (menu-bar-mode -1)
 
@@ -13,3 +22,18 @@
       (concat user-temporary-file-directory ".auto-saves-"))
 (setq auto-save-file-name-transforms
       `((".*" ,user-temporary-file-directory t)))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("419844e5ed7f7ce7fc580adc2864426e30c52e81" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(load-theme 'zenburn)
