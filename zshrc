@@ -7,6 +7,6 @@ ZSH_THEME="blinks"
 
 # Which plugins would you like to load? e.g. plugins=(git brew osx)
 # (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git brew osx rbenv)
+plugins=(git brew rbenv)
 
 source $ZSH/oh-my-zsh.sh
