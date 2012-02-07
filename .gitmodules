@@ -4,3 +4,9 @@
 [submodule "emacs.d/vendor/markdown-mode"]
 	path = emacs.d/vendor/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
+[submodule "emacs.d/vendor/less-css-mode"]
+	path = emacs.d/vendor/less-css-mode
+	url = git://github.com/purcell/less-css-mode.git
+[submodule "emacs.d/vendor/coffee-mode"]
+	path = emacs.d/vendor/coffee-mode
+	url = https://github.com/Jonanin/coffee-mode
