@@ -3,7 +3,8 @@
     email = nolan@nolanw.ca
 [core]
     excludesfile = ~/.global_gitignore
-	quotepath = false
+    quotepath = false
+    autocrlf = input
 [alias]
     ap = add -p
     cm = commit -m
