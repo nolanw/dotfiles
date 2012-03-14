@@ -4,6 +4,7 @@
 [core]
     excludesfile = ~/.global_gitignore
     quotepath = false
+    autocrlf = input
 [alias]
     a = add
     ap = add -p
