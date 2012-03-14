@@ -5,6 +5,7 @@
     excludesfile = ~/.global_gitignore
     quotepath = false
 [alias]
+    a = add
     ap = add -p
     cm = commit -m
     cma = commit -a -m
@@ -13,6 +14,7 @@
     caa = commit -a --amend -C HEAD 
     # Pretty one-line log.
     hist = log --pretty=format:\"%h %ad | %s %d [%an]\" --graph --date=short
+    s = status
 [github]
     user = nolanw
 [push]
