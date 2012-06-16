@@ -1,8 +1,6 @@
 set nocompatible
-
-filetype on
-filetype indent on
-filetype plugin on
-
+call pathogen#infect()
 syntax on
+filetype plugin indent on
+colorscheme zenburn
 
