@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 def install_dotfiles
-  %x[git submodule init && git submodule update]
   replace_all = false
   Dir['*'].each do |file|
     next if %w[install README.md].include? file
