@@ -1,0 +1,102 @@
+#!/bin/sh
+
+################################################################################
+# Global UI
+
+# Transparent menu bar
+defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool YES
+
+# Do not animate opening and closing windows
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool NO
+
+# Expand save sheet
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool YES
+
+# Expand print sheet
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool YES
+
+# Tab moves focus between all controls ("Full Keyboard Access")
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Do not animate Get Info
+defaults write com.apple.finder DisableAllAnimations -bool YES
+
+################################################################################
+# Finder
+
+# Do not warn when changing a file's extension
+defaults write com.apple.desktopservices FXEnableExtensionChangeWarning -bool NO
+
+# Don't verify disk images
+defaults write com.apple.frameworks.diskimages skip-verify -bool YES
+defaults write com.apple.frameworks.diskimages skip-verify-locked -bool YES
+defaults write com.apple.frameworks.diskimages skip-verify-remote -bool YES
+
+################################################################################
+# Dock
+
+# Show dock on left
+defaults write com.apple.dock orientation -string left
+
+# Pin dock to top
+defaults write com.apple.dock pinning -string start
+
+################################################################################
+# Hot corners
+
+# Bottom left corner turns displays off
+defaults write com.apple.dock wvous-bl-corner -int 10
+defaults write com.apple.dock wvous-bl-modifier -int 0
+
+################################################################################
+# Safari
+
+# Hide bookmarks bar
+defaults write com.apple.safari ShowFavoritesBar -bool NO
+
+# Never open downloads
+defaults write com.apple.safari AutoOpenSafeDownloads -bool NO
+
+# Blank home page
+defaults write com.apple.safari HomePage -string ""
+
+# Show develop menu and Web Inspector
+defaults write com.apple.safari IncludeDevelopMenu -bool YES
+defaults write com.apple.safari WebKitDeveloperExtrasEnabledPreferenceKey -bool YES
+defaults write com.apple.safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool YES
+
+# Send do not track HTTP header
+defaults write com.apple.safari SendDoNotTrackHTTPHeader -bool YES
+
+# Disable Java and other plugins
+defaults write com.apple.safari WebKitJavaEnabled -bool NO
+defaults write com.apple.safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled" -bool NO
+defaults write com.apple.safari WebKitPluginsEnabled -bool NO
+defaults write com.apple.safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2PluginsEnabled" -bool NO
+
+################################################################################
+# iTunes
+
+# Don't show the Ping sidebar
+defaults write com.apple.itunes disablePingSidebar -bool YES
+
+# Don't show Ping anything
+defaults write com.apple.itunes disablePing -bool YES
+
+################################################################################
+# Mail
+
+# Copy email addresses as `foo@example.com`
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool NO
+
+################################################################################
+# Time Machine
+
+# Don't prompt to use hard drives for backup
+defaults write com.apple.timemachine DoNotOfferNewDisksForBackup -bool YES
+
+################################################################################
+# Done
+
+echo "Restart affected applications to see settings changes."
+
