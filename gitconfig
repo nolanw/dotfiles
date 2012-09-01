@@ -15,7 +15,7 @@
     caa = commit -a --amend -C HEAD 
     # Pretty one-line log.
     hist = log --pretty=format:\"%h %ad | %s %d [%an]\" --graph --date=short
-    s = status
+    s = status --short
 [github]
     user = nolanw
 [push]
