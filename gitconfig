@@ -8,9 +8,8 @@
 [alias]
     a = add
     ap = add -p
-    cm = commit -m
-    cma = commit -a -m
-    ca = commit --amend
+    c = commit --verbose
+    ca = commit --amend --verbose
     # Amend previous commit, reusing commit message.
     caa = commit -a --amend -C HEAD 
     # Pretty one-line log.
