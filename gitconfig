@@ -1,22 +1,21 @@
 [user]
-    name = Nolan Waite
-    email = nolan@nolanw.ca
+  name = Nolan Waite
+  email = nolan@nolanw.ca
 [core]
-    excludesfile = ~/.global_gitignore
-    quotepath = false
-    autocrlf = input
-    editor = mate -w -l 1
+  excludesfile = ~/.global_gitignore
+  quotepath = false
+  autocrlf = input
+  editor = mate -w -l 1
 [alias]
-    a = add
-    ap = add -p
-    c = commit --verbose
-    ca = commit --amend --verbose
-    # Amend previous commit, reusing commit message.
-    caa = commit -a --amend -C HEAD 
-    # Pretty one-line log.
-    hist = log --pretty=format:\"%h %ad | %s %d [%an]\" --graph --date=short
-    s = status --short
+  ap = add -p
+  c = commit --verbose
+  ca = commit --amend --verbose
+  d = diff --word-diff
+  l = log --oneline --decorate
+  s = status --short
 [github]
-    user = nolanw
+  user = nolanw
 [push]
-    default = tracking
+  default = tracking
+[branch]
+  autosetuprebase = always
