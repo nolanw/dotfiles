@@ -6,3 +6,5 @@ for f in `brew --prefix`/etc/bash_completion.d/*; do source $f; done
 PS1='\[\033]0;\w\007\]$(__git_ps1 "%s ")⌘ '
 EDITOR="/usr/local/bin/mate -w"
 alias g='git'
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
+  || complete -o default -o nospace -F _git g
