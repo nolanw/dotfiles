@@ -10,3 +10,4 @@ complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
   || complete -o default -o nospace -F _git g
 alias iossim='open `xcode-select --print-path`/../Applications/iPhone\ '\
 'Simulator.app'
+alias fuxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/'
