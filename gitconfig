@@ -6,6 +6,7 @@
   quotepath = false
   autocrlf = input
   editor = mate -w -l 1
+  trustctime = false
 [alias]
   ap = add -p
   c = commit --verbose
