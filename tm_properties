@@ -1,3 +1,6 @@
 softWrap = true
 tabSize = 2
 softTabs = true
+
+[ .git/COMMIT_EDITMSG ]
+wrapColumn = 80
