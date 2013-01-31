@@ -1,5 +1,5 @@
 eval "$(rbenv init -)"
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/share/npm/bin:$PATH
 export EDITOR='/usr/local/bin/mate -w'
 
 autoload -U compinit
