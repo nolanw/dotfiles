@@ -15,7 +15,7 @@ zstyle ':vcs_info:git*' formats "%b "
 zstyle ':vcs_info:git*' actionformats "%b (%a) "
 
 alias fuxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/'
-alias iossim='open `xcode-select --print-path`/../Applications/iPhone Simulator.app'
+alias iossim='open "`xcode-select --print-path`/../Applications/iPhone Simulator.app"'
 
 precmd() {
   vcs_info
