@@ -9,10 +9,12 @@
   trustctime = false
 [alias]
   ap = add -p
+  b = branch
   c = commit --verbose
   ca = commit --amend --verbose
   d = diff --color-words
   l = log --oneline --decorate
+  o = checkout
   s = status --short
 [github]
   user = nolanw
