@@ -30,3 +30,6 @@ precmd() {
 
 setopt prompt_subst
 PROMPT='%~ ${vcs_info_msg_0_}%# '
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
