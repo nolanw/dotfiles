@@ -6,6 +6,13 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=*' 'l:|=* r:|=*'
 
+slash-backward-kill-word() {
+  local WORDCHARS="${WORDCHARS:s@/@}"
+  zle backward-kill-word
+}
+zle -N slash-backward-kill-word
+bindkey '^W' slash-backward-kill-word
+
 alias ls='ls -G'
 
 alias g='git'
