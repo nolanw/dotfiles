@@ -6,6 +6,12 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=*' 'l:|=* r:|=*'
 
+SAVEHIST=10000
+HISTSIZE=10000
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_find_no_dups
+
 slash-backward-kill-word() {
   local WORDCHARS="${WORDCHARS:s@/@}"
   zle backward-kill-word
