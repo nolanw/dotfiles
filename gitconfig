@@ -15,6 +15,7 @@
   d = diff --color-words
   l = log --oneline --decorate
   o = checkout
+  r = rebase
   s = status -sb
 [github]
   user = nolanw
