@@ -1,0 +1,2 @@
+# Upgrade default commit command.
+bind status C !git commit --verbose

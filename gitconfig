@@ -16,14 +16,17 @@
   l = log --oneline --decorate
   o = checkout
   r = rebase
+  rma = !git ls-files --deleted -z | xargs -0 git rm
   s = status -sb
 [github]
   user = nolanw
 [push]
-  default = tracking
+	default = simple
 [branch]
   autosetuprebase = always
 [color]
   ui = true
 [credential]
   helper = osxkeychain
+[diff]
+	algorithm = patience
