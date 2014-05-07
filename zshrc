@@ -1,5 +1,7 @@
 eval "$(rbenv init -)"
-export PATH=/usr/local/bin:/usr/local/share/npm/bin:$PATH
+export GEM_HOME="$HOME/.gems"
+
+export PATH="/usr/local/bin:$GEM_HOME/bin:/usr/local/share/npm/bin:$PATH"
 export EDITOR='/usr/local/bin/mate -w'
 
 autoload -U compinit
@@ -36,6 +38,3 @@ precmd() {
 
 setopt prompt_subst
 PROMPT='%~ ${vcs_info_msg_0_}%# '
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
