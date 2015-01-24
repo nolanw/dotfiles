@@ -1,3 +1,0 @@
-[submodule "chisel"]
-	path = chisel
-	url = https://github.com/facebook/chisel
