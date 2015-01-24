@@ -54,6 +54,8 @@ fi
 
 alias ls='ls -G'
 
+md() { pandoc "$1" | lynx -stdin }
+
 alias g='hub'
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
