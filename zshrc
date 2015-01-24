@@ -54,7 +54,7 @@ fi
 
 alias ls='ls -G'
 
-alias g='git'
+alias g='hub'
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*' formats "%b "
