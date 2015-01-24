@@ -12,16 +12,18 @@
   b = branch
   c = commit --verbose
   ca = commit --amend --verbose
+  ccc = commit --amend -C HEAD
   d = diff --color-words
   l = log --oneline --decorate
   o = checkout
+  ob = checkout -b
   r = rebase
   rma = !git ls-files --deleted -z | xargs -0 git rm
   s = status -sb
 [github]
   user = nolanw
 [push]
-	default = simple
+  default = simple
 [branch]
   autosetuprebase = always
 [color]
@@ -29,4 +31,4 @@
 [credential]
   helper = osxkeychain
 [diff]
-	algorithm = patience
+  algorithm = patience
