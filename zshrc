@@ -1,7 +1,4 @@
-eval "$(rbenv init -)"
-export GEM_HOME="$HOME/.gems"
-
-export PATH="/usr/local/bin:$GEM_HOME/bin:/usr/local/share/npm/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 export EDITOR='/usr/local/bin/mate -w'
 
 autoload -U compinit
