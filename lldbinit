@@ -1,1 +1,5 @@
 command script import /usr/local/opt/chisel/libexec/fblldb.py
+
+# fixes for busted chisel until homebrew formula is updated
+command alias ppv expr -o -- (NSString *)[[UIWindow keyWindow] recursiveDescription]
+command alias ppvc expr -o -- (NSString *)[[[UIWindow keyWindow] rootViewController] _printHierarchy]
