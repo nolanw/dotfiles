@@ -8,18 +8,26 @@
   editor = mate -w -l 1
   trustctime = false
 [alias]
+  amend = commit -a --amend
   ap = add -p
   b = branch
+  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+  bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
   c = commit --verbose
   ca = commit --amend --verbose
   ccc = commit --amend -C HEAD
+  cm = !git add -A && git commit -m
+  co = checkout
+  cob = checkout -b
   d = diff --color-words
   l = log --oneline --decorate
-  o = checkout
-  ob = checkout -b
   r = rebase
   rma = !git ls-files --deleted -z | xargs -0 git rm
   s = status -sb
+  save = !git add -A && git commit -m 'SAVEPOINT'
+  undo = reset HEAD~1 --mixed
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 [github]
   user = nolanw
 [push]

@@ -57,7 +57,7 @@ alias ls='ls -G'
 
 md() { pandoc "$1" | lynx -stdin }
 
-alias g='hub'
+alias g='git'
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*' formats "%b "
