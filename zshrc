@@ -1,4 +1,5 @@
 export PATH="/usr/local/bin:$PATH"
+export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 export EDITOR='/usr/local/bin/mate -w'
 
 autoload -U compinit
