@@ -17,8 +17,8 @@
   ca = commit --amend --verbose
   ccc = commit --amend -C HEAD
   cm = !git add -A && git commit -m
-  co = checkout
-  cob = checkout -b
+  o = checkout
+  ob = checkout -b
   d = diff --color-words
   l = log --oneline --decorate
   r = rebase
