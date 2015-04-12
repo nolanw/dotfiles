@@ -66,6 +66,25 @@ zstyle ':vcs_info:git*' actionformats "%b (%a) "
 alias fuxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/'
 alias iossim='open "`xcode-select --print-path`/../Applications/iPhone Simulator.app"'
 
+xcopen() {
+  setopt null_glob
+  IFS=$'\n' workspaces=(*.xcworkspace)
+  if [ ${#workspaces[@]} -eq 1 ]; then
+    open -a Xcode "${workspaces[0]}"
+    return
+  elif [ ${#workspaces[@]} -gt 1 ]; then
+    echo "Too many workspaces"
+  fi
+  
+  IFS=$'\n' projects=(*.xcodeproj)
+  if [ ${#projects[@]} -eq 1 ]; then
+    open -a Xcode "${projects[0]}"
+    return
+  elif [ ${#projects[@]} -gt 1 ]; then
+    echo "Too many projects"
+  fi
+}
+
 precmd() {
   vcs_info
 }
