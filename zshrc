@@ -74,6 +74,7 @@ xcopen() {
     return
   elif [ ${#workspaces[@]} -gt 1 ]; then
     echo "Too many workspaces"
+    return
   fi
   
   IFS=$'\n' projects=(*.xcodeproj)
@@ -82,6 +83,10 @@ xcopen() {
     return
   elif [ ${#projects[@]} -gt 1 ]; then
     echo "Too many projects"
+    return
+  else
+    echo "No projects or workspaces found"
+    return
   fi
 }
 
