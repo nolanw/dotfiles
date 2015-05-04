@@ -96,3 +96,5 @@ precmd() {
 
 setopt prompt_subst
 PROMPT='%~ ${vcs_info_msg_0_}%# '
+
+[ -f .zshrc-local ] && source .zshrc-local
