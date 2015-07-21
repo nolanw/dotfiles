@@ -6,3 +6,6 @@ command alias ppvc expr -o -- (NSString *)[[[UIWindow keyWindow] rootViewControl
 
 # convenience
 command regex ivar 's/(.+)/expr -o -- (NSString *)[(%1) _ivarDescription]/'
+
+# objc po in swift
+command alias pobjc expr -l objc++ -O --
