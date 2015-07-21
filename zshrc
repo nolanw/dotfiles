@@ -90,6 +90,8 @@ xcopen() {
   fi
 }
 
+export COCOAPODS_DISABLE_STATS=1
+
 precmd() {
   vcs_info
 }
