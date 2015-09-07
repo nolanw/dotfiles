@@ -6,6 +6,7 @@ Icon
 nolanw.perspectivev3
 xcuserdata
 *.xccheckout
+*.xcscmblueprint
 
 # etc.
 .envrc
