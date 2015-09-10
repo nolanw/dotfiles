@@ -5,7 +5,7 @@
   excludesfile = ~/.global_gitignore
   quotepath = false
   autocrlf = input
-  editor = mate -w -l 1
+  editor = ~/.giteditor
   trustctime = false
 [alias]
   amend = commit -a --amend

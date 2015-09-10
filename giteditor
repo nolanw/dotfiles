@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if command -v mate >/dev/null 2>&1; then
+    mate -w -l 1 "$@"
+elif command -v "C:/Program Files (x86)/Notepad++/notepad++.exe" >/dev/null 2>&1; then
+    "C:/Program Files (x86)/Notepad++/notepad++.exe" -multiInst -notabbar -nosession -noPlugin "$@"
+else
+    echo "Could not find an editor"
+    exit 1
+fi
