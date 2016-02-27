@@ -58,7 +58,7 @@
 			<key>Identifier</key>
 			<string>extendedClass</string>
 			<key>Name</key>
-			<string>Class:</string>
+			<string>Class/superclass:</string>
 			<key>Description</key>
 			<string>Which class to subclass, or to add a category or extension to</string>
 			<key>Default</key>
