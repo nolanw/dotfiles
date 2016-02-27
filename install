@@ -4,7 +4,13 @@ shopt -s extglob
 
 cd $(dirname "${BASH_SOURCE[0]}")
 
-for file in !(install|README.md|chisel); do
+for file in !(install|README.md|chisel|xctemplate); do
   target="${HOME}/.${file}"
   ln -s "$(pwd)/$file" "$target" &>/dev/null && echo "linking $file"
+done
+
+mkdir -p ~/Library/Developer/Xcode/Templates/Custom
+
+for dir in xctemplate/*; do
+  cp -R "$dir" ~/Library/Developer/Xcode/Templates/Custom/ &>/dev/null && echo "copying ${dir##*/}"
 done
