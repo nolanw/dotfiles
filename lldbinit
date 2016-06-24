@@ -5,7 +5,7 @@ command alias ppv expr -o -- (NSString *)[[UIWindow keyWindow] recursiveDescript
 command alias ppvc expr -o -- (NSString *)[[[UIWindow keyWindow] rootViewController] _printHierarchy]
 
 # convenience
-command regex ivar 's/(.+)/expr -o -- (NSString *)[(%1) _ivarDescription]/'
+command regex ivar 's/(.+)/expr -l objc++ -o -- (NSString *)[(%1) _ivarDescription]/'
 
 # objc po in swift
 command alias pobjc expr -l objc++ -O --
