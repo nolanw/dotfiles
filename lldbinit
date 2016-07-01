@@ -1,8 +1,8 @@
 command script import /usr/local/opt/chisel/libexec/fblldb.py
 
 # fixes for busted chisel
-command alias ppv expr -o -- (NSString *)[[UIWindow keyWindow] recursiveDescription]
-command alias ppvc expr -o -- (NSString *)[[[UIWindow keyWindow] rootViewController] _printHierarchy]
+command alias ppv expr -l objc++ -o -- (NSString *)[[UIWindow keyWindow] recursiveDescription]
+command alias ppvc expr -l objc++ -o -- (NSString *)[[[UIWindow keyWindow] rootViewController] _printHierarchy]
 
 # convenience
 command regex ivar 's/(.+)/expr -l objc++ -o -- (NSString *)[(%1) _ivarDescription]/'
