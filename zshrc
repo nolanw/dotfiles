@@ -92,6 +92,8 @@ xcopen() {
 
 export COCOAPODS_DISABLE_STATS=1
 
+hash direnv 2>/dev/null && eval "$(direnv hook zsh)"
+
 precmd() {
   vcs_info
 }
