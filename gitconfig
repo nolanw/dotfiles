@@ -53,8 +53,6 @@
 [diff]
   algorithm = patience
   compactionHeuristic = true
-[diff "localizablestrings"]
-  textconv = "iconv -f utf-16 -t utf-8"
 [diff "plist"]
   textconv = plutil -convert xml1 -o -
 [merge]
