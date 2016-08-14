@@ -66,29 +66,46 @@ zstyle ':vcs_info:git*' actionformats "%b (%a) "
 alias fuxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/'
 alias iossim='open "`xcode-select --print-path`/../Applications/iPhone Simulator.app"'
 
-xcopen() {
-  setopt null_glob
-  IFS=$'\n' workspaces=(*.xcworkspace)
-  if [ ${#workspaces[@]} -eq 1 ]; then
-    open -a Xcode "${workspaces[0]}"
-    return
-  elif [ ${#workspaces[@]} -gt 1 ]; then
-    echo "Too many workspaces"
-    return
-  fi
-  
-  IFS=$'\n' projects=(*.xcodeproj)
-  if [ ${#projects[@]} -eq 1 ]; then
-    open -a Xcode "${projects[0]}"
-    return
-  elif [ ${#projects[@]} -gt 1 ]; then
-    echo "Too many projects"
-    return
+# Opens the sole Xcode workspace or Xcode project in a directory.
+#
+# - Parameters:
+#   - "beta", if passed, will try to open the workspace/project in Xcode-beta.app.
+#   - An optional directory that, if passed, will be searched for workspaces and projects.
+xcopen() (
+  local beta=
+  local dir=
+  if [ "$1" = "beta" ]; then
+    beta="-beta"
+    dir=$2
   else
-    echo "No projects or workspaces found"
-    return
+    dir=$1
+    [ "$2" = "beta" ] && beta="-beta"
   fi
-}
+  dir=${dir:-.}
+  
+  setopt null_glob
+  IFS=$'\n'
+  
+  local workspaces=
+  workspaces=("$dir"/*.xcworkspace)
+  [ "${#workspaces}" -eq 1 ] && {
+    open -a Xcode"$beta" "${workspaces[1]}"
+    return 
+  }
+  
+  local projects=
+  projects=("$dir"/*.xcodeproj)
+  [ "${#projects}" -eq 1 ] && {
+    open -a Xcode"$beta" "${projects[1]}"
+    return
+  }
+  
+  if [ $(( ${#workspaces} + ${#projects} )) -gt 1 ]; then
+    echo "Wanted exactly one Xcode workspace or project, but found multiple."
+  else
+    echo "Couldn't find any Xcode workspaces or projects."
+  fi
+)
 
 export COCOAPODS_DISABLE_STATS=1
 
