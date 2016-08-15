@@ -1,2 +1,5 @@
 # Upgrade default commit command.
 bind status C !git commit --verbose
+
+# Create new branch.
+bind refs n !@git branch "%(prompt Enter branch name: )"
