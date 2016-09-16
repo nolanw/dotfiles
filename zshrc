@@ -108,6 +108,7 @@ xcopen() (
 )
 
 export COCOAPODS_DISABLE_STATS=1
+export FASTLANE_OPT_OUT_USAGE=1
 
 hash direnv 2>/dev/null && eval "$(direnv hook zsh)"
 
