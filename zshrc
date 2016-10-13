@@ -6,6 +6,9 @@ export EDITOR='/usr/local/bin/mate -w'
 autoload -U compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=*' 'l:|=* r:|=*'
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 SAVEHIST=10000
 HISTSIZE=10000
