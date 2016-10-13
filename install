@@ -4,9 +4,15 @@ shopt -s extglob
 
 cd $(dirname "${BASH_SOURCE[0]}")
 
-for file in !(install|README.md|chisel|xctemplate); do
+for file in !(fish|install|README.md|chisel|xctemplate); do
   target="${HOME}/.${file}"
   ln -s "$(pwd)/$file" "$target" &>/dev/null && echo "linking $file"
+done
+
+mkdir -p "$HOME/.config/fish"
+for file in fish/*; do
+  base=${file##*/}
+  ln -s "$(pwd)/$file" "$HOME/.config/fish/$base" &>/dev/null && echo "linking .config/fish/$base"
 done
 
 mkdir -p ~/Library/Developer/Xcode/Templates/Custom
