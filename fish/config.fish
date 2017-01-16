@@ -1,6 +1,6 @@
 # Sync universal variables.
 set COCOAPODS_DISABLE_STATS true
-set -qUx EDITOR; or set -Ux EDITOR mate -w
+set -qUx EDITOR; or set -Ux EDITOR 'mate -w'
 
 # direnv
 eval (direnv hook fish)
