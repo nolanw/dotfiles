@@ -1,5 +1,5 @@
 # Sync universal variables.
-set COCOAPODS_DISABLE_STATS true
+set -qUx COCOAPODS_DISABLE_STATS; or set -Ux COCOAPODS_DISABLE_STATS 'true'
 set -qUx EDITOR; or set -Ux EDITOR 'mate -w'
 
 # direnv
