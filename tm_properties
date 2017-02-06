@@ -5,5 +5,5 @@ softTabs = true
 [ .git/COMMIT_EDITMSG ]
 wrapColumn = 80
 
-[ "*.py" ]
+[ source.python ]
 tabSize = 4
