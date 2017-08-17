@@ -6,4 +6,10 @@ set -qUx EDITOR; or set -Ux EDITOR 'mate -w'
 eval (direnv hook fish)
 
 # Various package managers' bin folders
-set PATH (ruby -rubygems -e 'puts Gem.user_dir')/bin ~/Library/Python/2.7/bin /Applications/Postgres.app/Contents/Versions/latest/bin $PATH
+set -U fish_user_paths (ruby -rubygems -e 'puts Gem.user_dir')/bin ~/Library/Python/2.7/bin /Applications/Postgres.app/Contents/Versions/latest/bin $fish_user_paths
+
+# Local config
+set -l local_config_file ~/.local_config.fish
+if test -f $local_config_file
+  source $local_config_file
+end
