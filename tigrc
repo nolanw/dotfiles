@@ -1,3 +1,5 @@
+# More ideas: https://github.com/jonas/tig/wiki/Bindings
+
 # Upgrade default commit command.
 bind status C !git commit --verbose
 
