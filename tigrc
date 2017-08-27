@@ -3,3 +3,7 @@ bind status C !git commit --verbose
 
 # Create new branch.
 bind refs n !@git branch "%(prompt Enter branch name: )"
+
+# Start interactive rebase from selected commit
+bind main R !git rebase -i %(commit)^
+bind diff R !git rebase -i %(commit)^
