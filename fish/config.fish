@@ -1,6 +1,7 @@
 # Sync universal variables.
 set -qUx COCOAPODS_DISABLE_STATS; or set -Ux COCOAPODS_DISABLE_STATS 'true'
 set -qUx EDITOR; or set -Ux EDITOR 'mate -w'
+set -qUx FASTLANE_SKIP_UPDATE_CHECK; or set -Ux FASTLANE_SKIP_UPDATE_CHECK '1'
 
 # direnv
 eval (direnv hook fish)
