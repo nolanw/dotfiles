@@ -7,7 +7,7 @@ set -qUx FASTLANE_SKIP_UPDATE_CHECK; or set -Ux FASTLANE_SKIP_UPDATE_CHECK '1'
 eval (direnv hook fish)
 
 # Various package managers' bin folders
-set -U fish_user_paths (ruby -rubygems -e 'puts Gem.user_dir')/bin ~/Library/Python/2.7/bin $fish_user_paths
+set -gx PATH (ruby -rubygems -e 'puts Gem.user_dir')/bin ~/Library/Python/2.7/bin $PATH
 
 # Local config
 set -l local_config_file ~/.local_config.fish
