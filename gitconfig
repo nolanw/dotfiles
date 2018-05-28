@@ -1,38 +1,14 @@
-[user]
-  name = Nolan Waite
-  email = nolan@nolanw.ca
-[core]
-  attributesfile = ~/.global_gitattributes
-  excludesfile = ~/.global_gitignore
-  quotepath = false
-  autocrlf = input
-  editor = ~/.giteditor
-  trustctime = false
 [alias]
-  amend = commit -a --amend
   ap = add -p
   b = branch
-  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
-  bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
   c = commit --verbose
-  ca = commit --amend --verbose
   ccc = commit --amend -C HEAD
-  cm = !git add -A && git commit -m
   o = checkout
   ob = checkout -b
   d = diff --color-words
   l = log --oneline --decorate
   r = rebase
-  rma = !git ls-files --deleted -z | xargs -0 git rm
   s = status -sb
-  save = !git add -A && git commit -m 'SAVEPOINT'
-  undo = reset HEAD~1 --mixed
-  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
-  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-[github]
-  user = nolanw
-[push]
-  default = simple
 [branch]
   autosetuprebase = always
 [color "branch"]
@@ -48,6 +24,13 @@
   added = yellow
   changed = green
   untracked = cyan
+[core]
+  attributesfile = ~/.global_gitattributes
+  excludesfile = ~/.global_gitignore
+  quotepath = false
+  autocrlf = input
+  editor = ~/.giteditor
+  trustctime = false
 [credential]
   helper = osxkeychain
 [diff]
@@ -55,5 +38,16 @@
   compactionHeuristic = true
 [diff "plist"]
   textconv = plutil -convert xml1 -o -
+[github]
+  user = nolanw
 [merge]
   conflictstyle = diff3
+[pull]
+  rebase = true
+[push]
+  default = simple
+[rebase]
+  autoStash = true
+[user]
+  name = Nolan Waite
+  email = nolan@nolanw.ca
