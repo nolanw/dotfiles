@@ -5,10 +5,17 @@ set -qUx FASTLANE_SKIP_UPDATE_CHECK; or set -Ux FASTLANE_SKIP_UPDATE_CHECK '1'
 set -qUx PIP_USER; or set -Ux PIP_USER 'yes'
 
 # direnv
-eval (direnv hook fish)
+if type -q direnv
+  eval (direnv hook fish)
+end
 
 # Various package managers' bin folders
-set -gx PATH ~/.gem/ruby/2.3.0/bin ~/Library/Python/2.7/bin $PATH
+if test -e ~/.gem/ruby/2.3.0/bin
+  set -gx PATH ~/.gem/ruby/2.3.0/bin $PATH
+end
+if test -e ~/Library/Python/2.7/bin
+  set -gx PATH ~/Library/Python/2.7/bin $PATH
+end
 
 # Abbreviations
 abbr b='bundle exec'
