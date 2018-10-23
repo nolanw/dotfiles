@@ -46,6 +46,7 @@
   rebase = true
 [push]
   default = simple
+  followTags = true
 [rebase]
   autoStash = true
 [user]
