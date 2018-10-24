@@ -2,6 +2,8 @@ softWrap = true
 tabSize = 2
 softTabs = true
 
+excludeDirectories = "{$excludeDirectories,*.noindex}"
+
 [ .git/COMMIT_EDITMSG ]
 wrapColumn = 80
 
