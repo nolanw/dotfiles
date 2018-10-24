@@ -29,7 +29,6 @@
   excludesfile = ~/.global_gitignore
   quotepath = false
   autocrlf = input
-  editor = ~/.giteditor
   trustctime = false
 [credential]
   helper = osxkeychain
