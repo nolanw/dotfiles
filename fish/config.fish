@@ -1,6 +1,6 @@
 # Sync universal variables.
 set -qUx COCOAPODS_DISABLE_STATS; or set -Ux COCOAPODS_DISABLE_STATS 'true'
-set -qUx EDITOR; or set -Ux EDITOR 'vi'
+set -qUx EDITOR; or set -Ux EDITOR 'mate -w'
 set -qUx FASTLANE_SKIP_UPDATE_CHECK; or set -Ux FASTLANE_SKIP_UPDATE_CHECK '1'
 set -qUx PIP_USER; or set -Ux PIP_USER 'yes'
 
