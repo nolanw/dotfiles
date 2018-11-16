@@ -10,8 +10,11 @@ if type -q direnv
 end
 
 # Various package managers' bin folders
-if test -e ~/.gem/ruby/2.3.0/bin
-  set -gx PATH ~/.gem/ruby/2.3.0/bin $PATH
+begin
+  set -l gemhome (ruby -r rubygems -e 'puts Gem.user_dir')
+  if test -e $gemhome
+    set -gx PATH $gemhome/bin $PATH
+  end
 end
 if test -e ~/Library/Python/2.7/bin
   set -gx PATH ~/Library/Python/2.7/bin $PATH
