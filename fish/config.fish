@@ -21,8 +21,10 @@ if test -e ~/Library/Python/2.7/bin
 end
 
 # Abbreviations
-abbr b='bundle exec'
-abbr g='git'
+if status --is-interactive
+  abbr --add --global b 'bundle exec'
+  abbr --add --global g 'git'
+end
 
 # Local config
 set -l local_config_file ~/.local_config.fish
