@@ -19,6 +19,9 @@ end
 if test -e ~/Library/Python/2.7/bin
   set -gx PATH ~/Library/Python/2.7/bin $PATH
 end
+if test -e /Applications/Postgres.app
+  set -gx PATH /Applications/Postgres.app/Contents/Versions/latest/bin $PATH
+end
 
 # Abbreviations
 if status --is-interactive
