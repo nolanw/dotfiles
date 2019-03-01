@@ -25,8 +25,8 @@ end
 
 # Abbreviations
 if status --is-interactive
-  abbr --add --global b 'bundle exec'
-  abbr --add --global g 'git'
+  abbr --add b 'bundle exec'
+  abbr --add g 'git'
 end
 
 # Local config
