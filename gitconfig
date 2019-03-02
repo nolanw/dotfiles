@@ -1,16 +1,24 @@
+[user]
+  name = Nolan Waite
+  email = nolan@nolanw.ca
+
 [alias]
   ap = add -p
   b = branch
   c = commit --verbose
   ccc = commit --amend -C HEAD
+  ff = merge --ff-only
+  noff = merge --no-ff
   o = checkout
   ob = checkout -b
   d = diff --color-words
   l = log --oneline --decorate
   r = rebase
   s = status -sb
+
 [branch]
   autosetuprebase = always
+
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -24,30 +32,37 @@
   added = yellow
   changed = green
   untracked = cyan
+
 [core]
   attributesfile = ~/.global_gitattributes
   excludesfile = ~/.global_gitignore
   quotepath = false
   autocrlf = input
   trustctime = false
+
 [credential]
   helper = osxkeychain
+
 [diff]
   algorithm = patience
   compactionHeuristic = true
 [diff "plist"]
   textconv = plutil -convert xml1 -o -
+
 [github]
   user = nolanw
+
 [merge]
   conflictstyle = diff3
+  tool = vimdiff
+
 [pull]
   rebase = true
+
 [push]
   default = simple
   followTags = true
+
 [rebase]
   autoStash = true
-[user]
-  name = Nolan Waite
-  email = nolan@nolanw.ca
+
