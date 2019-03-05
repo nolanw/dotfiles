@@ -9,6 +9,9 @@ if type -q direnv
   eval (direnv hook fish)
 end
 
+# homebrew ruby
+set -gx PATH /usr/local/opt/ruby/bin $PATH
+
 # Various package managers' bin folders
 begin
   set -l gemhome (ruby -r rubygems -e 'puts Gem.user_dir')
