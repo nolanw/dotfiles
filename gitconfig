@@ -15,6 +15,7 @@
   l = log --oneline --decorate
   r = rebase
   s = status -sb
+  sub = submodule update --init --recursive
 
 [branch]
   autosetuprebase = always
