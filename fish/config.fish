@@ -3,16 +3,18 @@ set -gx EDITOR vi
 set -gx FASTLANE_SKIP_UPDATE_CHECK 1
 set -gx PIP_USER yes
 
+# Sync universal variables (erase now, build up later)
+set -Ue fish_user_paths
+
 # direnv
 if type -q direnv
   eval (direnv hook fish)
 end
 
 # homebrew ruby
-set -gx PATH /usr/local/opt/ruby/bin $PATH
+set -p fish_user_paths /usr/local/opt/ruby/bin
 
-# Sync various package managers' and utilities' bin folders (erase each run so it's consistent after updating dotfiles)
-set -Ue fish_user_paths
+# Various bin folders
 begin
   set -l gemhome (ruby -r rubygems -e 'puts Gem.user_dir')
   if test -e $gemhome
