@@ -1,8 +1,7 @@
-# Sync universal variables.
-set -qUx COCOAPODS_DISABLE_STATS; or set -Ux COCOAPODS_DISABLE_STATS 'true'
-set -qUx EDITOR; or set -Ux EDITOR 'vi'
-set -qUx FASTLANE_SKIP_UPDATE_CHECK; or set -Ux FASTLANE_SKIP_UPDATE_CHECK '1'
-set -qUx PIP_USER; or set -Ux PIP_USER 'yes'
+set -gx COCOAPODS_DISABLE_STATS true
+set -gx EDITOR vi
+set -gx FASTLANE_SKIP_UPDATE_CHECK 1
+set -gx PIP_USER yes
 
 # direnv
 if type -q direnv
@@ -12,18 +11,19 @@ end
 # homebrew ruby
 set -gx PATH /usr/local/opt/ruby/bin $PATH
 
-# Various package managers' bin folders
+# Sync various package managers' and utilities' bin folders (erase each run so it's consistent after updating dotfiles)
+set -Ue fish_user_paths
 begin
   set -l gemhome (ruby -r rubygems -e 'puts Gem.user_dir')
   if test -e $gemhome
-    set -gx PATH $gemhome/bin $PATH
+    set -a fish_user_paths $gemhome/bin
   end
 end
 if test -e ~/Library/Python/2.7/bin
-  set -gx PATH ~/Library/Python/2.7/bin $PATH
+  set -a fish_user_paths ~/Library/Python/2.7/bin
 end
 if test -e /Applications/Postgres.app
-  set -gx PATH /Applications/Postgres.app/Contents/Versions/latest/bin $PATH
+  set -a fish_user_paths /Applications/Postgres.app/Contents/Versions/latest/bin
 end
 
 # Abbreviations
