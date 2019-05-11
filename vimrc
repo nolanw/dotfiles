@@ -59,6 +59,7 @@ let g:javascript_plugin_jsdoc = 1
 " Override some of the above settings for certain file types
 augroup filetypeSpecific
   autocmd!
+  autocmd FileType gitcommit set tw=0 " I don't need the wrap
 	autocmd FileType javascript set ts=2 sw=2 sts=2 smartindent nocindent
   autocmd FileType python set sw=4 sts=4 et
   autocmd FileType ruby,haml,eruby,sass,cucumber set ai sw=2 sts=2 et
