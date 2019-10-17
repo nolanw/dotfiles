@@ -47,6 +47,7 @@
 [diff]
   algorithm = patience
   compactionHeuristic = true
+  noprefix = true
 [diff "plist"]
   textconv = plutil -convert xml1 -o -
 
