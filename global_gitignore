@@ -2,6 +2,9 @@
 .DS_Store
 Icon
 
+# JetBrains
+.idea/
+
 # Python
 *.pyc
 
