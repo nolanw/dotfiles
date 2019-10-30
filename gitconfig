@@ -48,15 +48,23 @@
   algorithm = patience
   compactionHeuristic = true
   noprefix = true
+  tool = "bbdiff"
+
 [diff "plist"]
   textconv = plutil -convert xml1 -o -
+
+[difftool]
+  prompt = false
+
+[difftool "bbdiff"]
+  cmd = /usr/local/bin/bbdiff --wait --resume -- "$LOCAL" "$REMOTE"
 
 [github]
   user = nolanw
 
 [merge]
   conflictstyle = diff3
-  tool = vimdiff
+  tool = bbdiff
 
 [pull]
   rebase = true
@@ -69,7 +77,7 @@
   autoStash = true
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true

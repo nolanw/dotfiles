@@ -1,5 +1,5 @@
 set -gx COCOAPODS_DISABLE_STATS true
-set -gx EDITOR vi
+set -gx EDITOR bbedit --wait --resume
 set -gx FASTLANE_SKIP_UPDATE_CHECK 1
 set -gx PIP_USER yes
 
@@ -30,6 +30,7 @@ end
 
 # Abbreviations
 if status --is-interactive
+  abbr --add bb 'bbedit'
   abbr --add b 'bundle exec'
   abbr --add g 'git'
 end
