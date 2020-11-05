@@ -57,7 +57,7 @@
   prompt = false
 
 [difftool "bbdiff"]
-  cmd = /usr/local/bin/bbdiff --wait --resume -- "$LOCAL" "$REMOTE"
+  cmd = /usr/local/bin/bbdiff --wait --resume --ignore-spaces -- "$LOCAL" "$REMOTE"
 
 [github]
   user = nolanw
