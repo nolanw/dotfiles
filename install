@@ -4,7 +4,7 @@ shopt -s extglob
 
 cd $(dirname "${BASH_SOURCE[0]}")
 
-for file in !(fish|install|README.md|chisel|pep8|xctemplate); do
+for file in !(DarkPastel.terminal|fish|install|README.md|chisel|pep8|xctemplate); do
   target="${HOME}/.${file}"
   ln -s "$(pwd)/$file" "$target" &>/dev/null && echo "linking $file"
 done
