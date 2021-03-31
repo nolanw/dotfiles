@@ -1,18 +1,31 @@
-set -gx COCOAPODS_DISABLE_STATS true
 set -gx EDITOR bbedit --wait --resume
+
+# Gunk
+
+set -gx COCOAPODS_DISABLE_STATS true
 set -gx FASTLANE_SKIP_UPDATE_CHECK 1
+set -gx HOMEBREW_NO_ANALYTICS 1
+
 
 # Paths
 
 ## Reset user paths so we can build it back up
 set -Ue fish_user_paths
 
+## Local stuff
+set -p fish_user_paths $HOME/bin
+
 ## Go
 set -gx GOPATH $HOME/.go
 set -p fish_user_paths $GOPATH/bin
 
-## MacPorts
-set -p fish_user_paths /opt/local/bin /opt/local/sbin
+## Homebrew
+if test -d /opt/homebrew
+    set -gx HOMEBREW_PREFIX /opt/homebrew
+    set -p fish_user_paths $HOMEBREW_PREFIX/bin $HOMEBREW_PREFIX/sbin
+    set -gx HOMEBREW_CELLAR $HOMEBREW_PREFIX/Cellar
+    set -gx HOMEBREW_REPOSITORY $HOMEBREW_PREFIX
+end
 
 ## pyenv
 if type -q pyenv
