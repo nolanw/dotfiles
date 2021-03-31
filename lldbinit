@@ -1,5 +1,5 @@
-# see https://github.com/facebook/chisel (seems to silently fail if chisel isn't installed)
-command script import /usr/local/opt/chisel/libexec/fblldb.py
+# https://github.com/facebook/chisel
+command script import /Users/nolanw/code/chisel/fbchisellldb.py
 
 # fixes for busted chisel
 command alias ppv expr -l objc++ -o -- (NSString *)[[UIWindow keyWindow] recursiveDescription]
