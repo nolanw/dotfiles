@@ -30,7 +30,7 @@ end
 ## pyenv
 if type -q pyenv
     set -gx PYENV_ROOT $HOME/.pyenv
-    set -p fish_user_paths $PYENV_ROOT/bin
+    set -p fish_user_paths $PYENV_ROOT/shims
 end
 
 
@@ -38,9 +38,6 @@ end
 
 ## direnv
 type -q direnv; and eval (direnv hook fish)
-
-## jump
-status --is-interactive; and source (jump shell fish | psub)
 
 ## pyenv
 if type -q pyenv; and status --is-interactive
