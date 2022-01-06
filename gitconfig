@@ -48,7 +48,7 @@
   algorithm = patience
   compactionHeuristic = true
   noprefix = true
-  tool = "bbdiff"
+  tool = "kaleidoscope"
 
 [diff "plist"]
   textconv = plutil -convert xml1 -o -
@@ -57,7 +57,10 @@
   prompt = false
 
 [difftool "bbdiff"]
-  cmd = /usr/local/bin/bbdiff --wait --resume --ignore-spaces -- "$LOCAL" "$REMOTE"
+  cmd = bbdiff --wait --resume --ignore-spaces -- "$LOCAL" "$REMOTE"
+
+[difftool "kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path "$MERGED" -- "$LOCAL" "$REMOTE"
 
 [github]
   user = nolanw
@@ -67,7 +70,13 @@
 
 [merge]
   conflictstyle = diff3
-  tool = bbdiff
+  tool = kaleidoscope
+
+[mergetool]
+  prompt = false
+
+[mergetool "kaleidoscope"]
+  cmd = ksdiff --merge --output "$MERGED" --base "$BASE" -- "$LOCAL" "$REMOTE"
 
 [pull]
   rebase = true

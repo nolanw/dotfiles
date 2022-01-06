@@ -23,3 +23,9 @@ mkdir -p ~/Library/Developer/Xcode/Templates/Custom
 for dir in xctemplate/*; do
   cp -R "$dir" ~/Library/Developer/Xcode/Templates/Custom/ &>/dev/null && echo "copying ${dir##*/}"
 done
+
+mkdir -p "$HOME/.lldb"
+for file in lldb/*; do
+  base=${file##*/}
+  ln -s "$(pwd)/$file" "$HOME/.lldb/$base" &>/dev/null && echo "linking .lldb/$base"
+done
