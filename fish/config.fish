@@ -45,13 +45,18 @@ if type -q pyenv; and status --is-interactive
 end
 
 
-# Abbreviations
+# Abbrev
 
 if status --is-interactive
     abbr --add b 'bundle exec'
     abbr --add bb 'bbedit'
     abbr --add g 'git'
 end
+
+
+# Global config
+
+set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 
 
 # Local config
