@@ -25,6 +25,7 @@ if test -d /opt/homebrew
     set -p fish_user_paths $HOMEBREW_PREFIX/bin $HOMEBREW_PREFIX/sbin
     set -gx HOMEBREW_CELLAR $HOMEBREW_PREFIX/Cellar
     set -gx HOMEBREW_REPOSITORY $HOMEBREW_PREFIX
+    set -gx HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
 end
 
 ## pyenv
