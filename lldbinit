@@ -1,13 +1,13 @@
 # https://github.com/facebook/chisel
-command script import /opt/homebrew/opt/chisel/libexec/fbchisellldb.py
+# Add to .local_lldbinit:
+# command script import path/to/fbchisellldb.py
 
 # Helpful bits in case Chisel is unavailable
 command alias ppv expr -l objc++ -o -- (NSString *)[[UIWindow keyWindow] recursiveDescription]
 command alias ppvc expr -l objc++ -o -- (NSString *)[[[UIWindow keyWindow] rootViewController] _printHierarchy]
 
-# Kaleidoscope
-command script import ~/.lldb/ksdiff.py
-command script add -f ksdiff.ksdiff ksdiff
-
 # convenience
 command regex ivar 's/(.+)/expr -l objc++ -o -- (NSString *)[(%1) _ivarDescription]/'
+
+# Local additions
+command script import -cs .lldbinit_local
