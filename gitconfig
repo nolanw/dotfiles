@@ -14,7 +14,7 @@
   d = diff --color-words
   l = log --oneline --decorate
   r = rebase
-  resign = "!git rebase --exec 'git commit --amend --no-edit -n -S' ${1-master}"
+  resign = "!git rebase --exec 'git commit --amend --no-edit -n -S' ${1-master} #"
   s = status -sb
   sub = submodule update --init --recursive
 
