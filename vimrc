@@ -27,4 +27,3 @@ augroup filetypeSpecific
     autocmd!
     autocmd FileType gitcommit set textwidth=0
 augroup END
-

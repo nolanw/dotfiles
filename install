@@ -1,18 +1,17 @@
-#!/usr/bin/env bash
-set -eu -o pipefail
-shopt -s extglob
+#!/bin/sh
 
-cd $(dirname "${BASH_SOURCE[0]}")
+cd $(dirname $(realpath "$0"))
 
-for file in !(DarkPastel.terminal|fish|install|README.md|chisel|pep8); do
-  target="${HOME}/.${file}"
-  ln -fhs "$PWD/$file" "$target" &>/dev/null && echo "linking $file"
-done
+for file in *; do case "$file" in
+    fish | pep8) continue;;
+    DarkPastel.terminal | install | README.md) continue;;
+    *) ln -fhs "$PWD/$file" "$HOME/.$file" &>/dev/null && echo "linking $file";;
+esac done
 
 mkdir -p "$HOME/.config/fish"
 for file in fish/*; do
-  base=${file##*/}
-  ln -fhs "$PWD/$file" "$HOME/.config/fish/$base" &>/dev/null && echo "linking .config/fish/$base"
+    base=${file##*/}
+    ln -fhs "$PWD/$file" "$HOME/.config/fish/$base" &>/dev/null && echo "linking .config/fish/$base"
 done
 
 mkdir -p "$HOME/.config"
