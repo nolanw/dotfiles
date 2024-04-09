@@ -1,5 +1,5 @@
 # https://github.com/facebook/chisel
-# Add to .local_lldbinit:
+# Add to .lldbinit_local:
 # command script import path/to/fbchisellldb.py
 
 # Helpful bits in case Chisel is unavailable
