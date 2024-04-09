@@ -4,14 +4,9 @@ shopt -s extglob
 
 cd $(dirname "${BASH_SOURCE[0]}")
 
-for file in !(DarkPastel.terminal|fish|install|README.md|chisel|pep8|xctemplate); do
+for file in !(DarkPastel.terminal|fish|install|README.md|chisel|pep8); do
   target="${HOME}/.${file}"
   ln -fhs "$PWD/$file" "$target" &>/dev/null && echo "linking $file"
-done
-
-mkdir -p ~/Library/Developer/Xcode/Templates/Custom
-for dir in xctemplate/*; do
-  cp -R "$dir" ~/Library/Developer/Xcode/Templates/Custom/ &>/dev/null && echo "copying ${dir##*/}"
 done
 
 mkdir -p "$HOME/.config/fish"
@@ -22,9 +17,3 @@ done
 
 mkdir -p "$HOME/.config"
 ln -fhs "$PWD/pep8" "$HOME/.config/pep8" &>/dev/null && echo "linking .config/pep8"
-
-mkdir -p "$HOME/.lldb"
-for file in lldb/*; do
-  base=${file##*/}
-  ln -fhs "$PWD/$file" "$HOME/.lldb/$base" &>/dev/null && echo "linking .lldb/$base"
-done
