@@ -10,4 +10,4 @@ command alias ppvc expr -l objc++ -o -- (NSString *)[[[UIWindow keyWindow] rootV
 command regex ivar 's/(.+)/expr -l objc++ -o -- (NSString *)[(%1) _ivarDescription]/'
 
 # Local additions
-command script import -cs .lldbinit_local
+command source -s true ~/.lldbinit_local
