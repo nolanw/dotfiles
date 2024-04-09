@@ -1,5 +1,4 @@
 # Abbrev
-
 if status --is-interactive
     abbr --add b 'bundle exec'
     abbr --add bb 'bbedit'
@@ -18,22 +17,18 @@ if type -q direnv
 end
 
 # EDITOR
-if type -q bbedit
-    set -gx EDITOR bbedit --wait --resume
-end
+set -gx EDITOR vim
+set -gx VISUAL $EDITOR
 
 # Gunk
-
 set -gx COCOAPODS_DISABLE_STATS true
 set -gx FASTLANE_SKIP_UPDATE_CHECK 1
 
 # Go
-
 set -gx GOPATH $HOME/.go
 fish_add_path -p $GOPATH/bin
 
 # Homebrew
-
 if test -d /opt/homebrew
     set -g -x HOMEBREW_PREFIX /opt/homebrew
     fish_add_path -p $HOMEBREW_PREFIX/bin $HOMEBREW_PREFIX/sbin
@@ -44,11 +39,9 @@ if test -d /opt/homebrew
 end
 
 # MacPorts
-
 fish_add_path -p /opt/local/bin /opt/local/sbin
 
 # pyenv
-
 set -gx PYENV_ROOT $HOME/.pyenv
 if test -d $PYENV_ROOT
     fish_add_path -p $PYENV_ROOT/bin $PYENV_ROOT/shims
@@ -59,11 +52,9 @@ if test -d $PYENV_ROOT
 end
 
 # ripgrep
-
 set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 
 # rubygems
-
 set -gx GEM_HOME $HOME/.gem
 if type -q ruby
     # too slow! faster way?
@@ -71,7 +62,6 @@ if type -q ruby
 end
 
 # local_config
-
 set -l local_config $HOME/.local_config.fish
 if test -f $local_config
     source $local_config
