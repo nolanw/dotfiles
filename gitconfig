@@ -7,6 +7,7 @@
   b = branch
   c = commit --verbose
   ccc = commit --amend -C HEAD
+  coned = "!git diff --name-only --diff-filter=U | xargs -I {} -R -1 $EDITOR {} #"
   ff = merge --ff-only
   noff = merge --no-ff
   o = checkout
