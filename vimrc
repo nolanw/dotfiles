@@ -1,29 +1,36 @@
-set cursorline
+filetype plugin indent on
 
-syntax on
+set autoread
 
 set backspace=indent,eol,start
+
+set cursorline
+
+set history=10000
+
+set ignorecase smartcase
+
+set incsearch
+
+set nojoinspaces
+
+set ruler
 
 set scrolloff=3
 
 set showcmd
 
+set wildmenu
+
+" Hide gunk
 set backupdir=/tmp
 set directory=/tmp
 
-set nojoinspaces
-
-set autoread
-
 " Tabs tabs tabs
+set autoindent
 set expandtab
-set tabstop=4
 set shiftwidth=0
 set softtabstop=4
-set autoindent
+set tabstop=4
 
-" File type-specific overrides
-augroup filetypeSpecific
-    autocmd!
-    autocmd FileType gitcommit set textwidth=0
-augroup END
+syntax on
