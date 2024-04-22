@@ -3,7 +3,7 @@
 cd $(dirname $(realpath "$0"))
 
 for file in *; do case "$file" in
-    fish | pep8) continue;;
+    fish | pep8 | vim) continue;;
     DarkPastel.terminal | install | README.md) continue;;
     *) ln -fhs "$PWD/$file" "$HOME/.$file" &>/dev/null && echo "linking $file";;
 esac done
@@ -16,3 +16,5 @@ done
 
 mkdir -p "$HOME/.config"
 ln -fhs "$PWD/pep8" "$HOME/.config/pep8" &>/dev/null && echo "linking .config/pep8"
+
+ln -fhs "$PWD/vim" "$HOME/.vim" &>/dev/null && echo "linking .vim"
