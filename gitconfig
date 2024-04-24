@@ -81,6 +81,7 @@
 
 [rebase]
   autoStash = true
+  updateRefs = true
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
